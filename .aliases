@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Basic
+alias c="clear" # Clean terminal
+alias q="exit" # Exit terminal
+alias quit="q" # Exit terminal
+
+# Directory
+alias l="ls -CF" # Show files and directories
+alias la="ls -A" # Show all files and directories
+alias ll="ls -alF" # Show files and directories with information
+
+# Routed
+alias cdd="cd /mnt/d" # Go to volume D
+alias cdc="cd /mnt/c" # Go to volume C
+alias cde="cd /mnt/e" # Go to volume E
+alias cdw="cd /mnt/c/Users/maike" # Go to windows home
+alias cdmb="cd $MYBASH" # Go to mybash configuration
+
+# Scripts
+alias s="myscripts" # Show my scripts file (short)
+alias scripts="s" # Show my scripts file
+# show: scripts -e # Edit my scripts file
+
+# My Aliases
+alias a="myaliases" # Show my aliases (short)
+alias aliases="a" # Show my aliases
+# show: aliases -f # Show my aliases file
+# show: aliases -e # Edit my aliases file
+
+# Git config
+alias cn="creategc" # Create git config for a specific project in volume D (cn myproject)
+alias cr="vi ~/.gitconfig" # Edit gitconfig routing file
+alias cg="vi ~/global.gitconfig" # Edit global gitconfig file
+
+# Git
+alias ga="git add ." # Git add
+alias gc="git commit" # Git commit
+alias gca="git commit --amend" # Git commit in amend mode
+alias gl="git log --pretty=format:'%C(yellow)%h%C(reset)%C(magenta) 👤 %aN %C(dim)<%ae>%C(reset) %C(blue)(%ad)%C(reset):%n%s%n'" # Git log
+alias gls="git log --pretty=format:'%C(magenta)👤 %aN %C(blue)(%ar)%C(reset): %s'" # Git log with short date
+alias glf="git log" # Git log with full information
+alias gs="git status" # Git status
+alias gst="git stash" # Git stash
+alias gsp="git stash pop" # Git stash pop (recupera los cambios y los elimina del stash)
+alias gsa="git stash apply" # Git stash apply (recupera los cambios pero lo mantiene del stash)
+alias gps="git push" # Git push
+alias gpl="git pull" # Git pull
+alias gf="git fetch" # Git fetch
+alias gt="git tag -n" # Git list tags
+
+# Utils
+alias ugr="npx git-reporter" # Git reporter for current project
+
+# SSH
+alias h="showssh" # Show ssh hosts (short)
+alias hosts="h" # Show ssh hosts
+# show: hosts -e # Edit ssh hosts
+# show: hosts -s # Select and connect to ssh host

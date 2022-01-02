@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# My Scripts
+myscripts() {
+  if [[ $@ == '-e' ]]; then
+    command vi $MYBASH/.scripts
+  else
+    command cat $MYBASH/.scripts
+  fi
+}

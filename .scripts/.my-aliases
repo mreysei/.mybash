@@ -1,0 +1,32 @@
+#!/bin/bash
+
+aliasesPath=$MYBASH/.aliases
+
+# My Aliases
+myaliases() {
+  if [[ $@ == '-e' ]]; then
+    command vi $aliasesPath
+  else; if [[ $@ == '-f' ]]; then
+    command cat $aliasesPath
+  else
+    local ALIASES=("")
+
+    local BLUE=$'\e[1;34m'
+    local GRAY=$'\e[1;90m'
+    local ENDCOLOR=$'\e[1;0m'
+
+    grep -E "^alias |^# show: " $aliasesPath | while read -r LINE; do
+      local PREALIAS=$(echo $LINE | awk -F '=' '{print $1}')
+      local DESCRIPTION=$(echo $LINE | awk -F ' # ' '{print $2}')
+      local ALIAS=$(echo $PREALIAS | awk -F 'alias ' '{print $2}')
+
+      if ! test $ALIAS; then
+        local ALIASFAKE=$(echo $LINE | awk -F ' # ' '{print $1}')
+        ALIAS+=$(echo $ALIASFAKE | awk -F ': ' '{print $2}')
+      fi
+
+      ALIASES+=("${ALIAS},${GRAY}#,${BLUE}${DESCRIPTION}${ENDCOLOR}\n")
+    done
+    command printf "$ALIASES" | column -t -s,
+  fi; fi
+}

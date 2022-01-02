@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Git config
+creategc() {
+  local GLOBALCONFIGFILE=.gitconfig
+  local CONFIGFILE=.gitconfig.$@
+  local DIR=/mnt/d/$@/
+
+  if [ ! "$GLOBALCONFIGFILE" = "$CONFIGFILE" ]; then
+    if ! test -f ~/$CONFIGFILE; then
+      echo "[includeIf \"getdit/i:$DIR\"]" >> ~/$GLOBALCONFIGFILE
+      echo "        path = $CONFIGFILE"    >> ~/$GLOBALCONFIGFILE
+    fi
+  fi
+
+  command vi ~/$CONFIGFILE
+}

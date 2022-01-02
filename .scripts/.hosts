@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Hosts
+showssh() {
+  local HOSTS=$(grep 'Host ' ~/.ssh/config | awk '{print $2}')
+  if [[ $@ == '-e' ]]; then
+    command vi ~/.ssh/config
+  else; if [[ $@ == '-s' ]]; then
+    local SELECTEDHOST=$(print "$HOSTS" | fzf)
+    eval "ssh $SELECTEDHOST"
+  else
+    print "$HOSTS"
+  fi; fi
+}

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export MYBASH="$HOME/.mybash"
+
+# Include files
+includeFiles() {
+  for var in "$@"; do
+    if [ -f $MYBASH/$var ]; then
+      . $MYBASH/$var
+    fi
+  done
+}
+
+includeFiles \
+  .scripts/.init \
+  .aliases

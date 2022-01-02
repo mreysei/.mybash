@@ -1,0 +1,11 @@
+#!/bin/bash
+
+scriptPath=.scripts
+ignoredFiles=("." ".." ".init")
+files=($(ls -a $MYBASH/$scriptPath/))
+
+for file in $files; do
+  if [[ ! $ignoredFiles[*] =~ $file ]]; then
+    includeFiles $scriptPath/$file
+  fi
+done
