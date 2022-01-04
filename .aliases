@@ -57,3 +57,7 @@ alias h="showssh" # Show ssh hosts (short)
 alias hosts="h" # Show ssh hosts
 # show: hosts -e # Edit ssh hosts
 # show: hosts -s # Select and connect to ssh host
+
+# Plugins
+alias j="z" # Jump to folder (plugin: agkozak/zsh-z)
+
