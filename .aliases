@@ -50,7 +50,8 @@ alias gf="git fetch" # Git fetch
 alias gt="git tag -n" # Git list tags
 
 # Utils
-alias ugr="npx git-reporter" # Git reporter for current project
+alias ugr="npx git-reporter" # Git reporter for current project (npx: ulisesantana/git-reporter)
+alias ugi="npx gitmoji-cli" # Gitmoji (npx: carloscuesta/gitmoji-cli)
 
 # SSH
 alias h="showssh" # Show ssh hosts (short)
