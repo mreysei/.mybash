@@ -37,6 +37,7 @@ alias cg="vi ~/global.gitconfig" # Edit global gitconfig file
 alias ga="git add ." # Git add
 alias gc="git commit" # Git commit
 alias gca="git commit --amend" # Git commit in amend mode
+alias gce="npx gitmoji-cli -c " # Git commit with emoji (npx: carloscuesta/gitmoji-cli)
 alias gl="git log --pretty=format:'%C(yellow)%h%C(reset)%C(magenta) 👤 %aN %C(dim)<%ae>%C(reset) %C(blue)(%ad)%C(reset):%n%s%n'" # Git log
 alias gls="git log --pretty=format:'%C(magenta)👤 %aN %C(blue)(%ar)%C(reset): %s'" # Git log with short date
 alias glf="git log" # Git log with full information
@@ -48,10 +49,7 @@ alias gps="git push" # Git push
 alias gpl="git pull" # Git pull
 alias gf="git fetch" # Git fetch
 alias gt="git tag -n" # Git list tags
-
-# Utils
-alias ugr="npx git-reporter" # Git reporter for current project (npx: ulisesantana/git-reporter)
-alias ugi="npx gitmoji-cli" # Gitmoji (npx: carloscuesta/gitmoji-cli)
+alias gr="npx git-reporter"  # Git reporter for current project (npx: ulisesantana/git-reporter)
 
 # SSH
 alias h="showssh" # Show ssh hosts (short)
