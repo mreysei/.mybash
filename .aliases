@@ -27,7 +27,7 @@ alias aliases="a" # Show my aliases
 # Git config
 alias cn="creategc" # Create git config for a specific project in volume D (cn myproject)
 alias cr="vi ~/.gitconfig" # Edit gitconfig routing file
-alias cg="vi ~/global.gitconfig" # Edit global gitconfig file
+alias cg="vi $MYBASH/.gitconfig/.global" # Edit global gitconfig file
 
 # Git
 alias ga="git add ." # Git add

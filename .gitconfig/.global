@@ -1,0 +1,13 @@
+[core]
+  autocrlf = input
+[user]
+  name = Michael Reyes
+[paper]
+  log = npx gitmoji-log | less --tabs=4 -rFX
+[color]
+  ui = true
+
+[includeIf "gitdir:~/projects/mreysei/"]
+	path = ./.mreysei
+[includeIf "gitdir:~/projects/leanmind/"]
+	path = ./.leanmind
