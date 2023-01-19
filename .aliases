@@ -4,6 +4,7 @@
 alias c="clear" # Clean terminal
 alias q="exit" # Exit terminal
 alias quit="q" # Exit terminal
+alias r="refreshmb" # Refresh terminal with mybash changes
 
 # Directory
 alias l="ls -CF" # Show files and directories
@@ -22,7 +23,6 @@ alias a="myaliases" # Show my aliases (short)
 alias aliases="a" # Show my aliases
 # show: aliases -f # Show my aliases file
 # show: aliases -e # Edit my aliases file
-alias art="source $MYBASH/.aliases" # Refresh terminal with my aliases updated
 
 # Git config
 alias cn="creategc" # Create git config for a specific project in volume D (cn myproject)
@@ -55,4 +55,4 @@ alias hosts="h" # Show ssh hosts
 
 # Plugins
 alias j="z" # Jump to folder (plugin: agkozak/zsh-z)
-
+alias f="fzf" # Finder with selectable (plugin: junegunn/fzf)

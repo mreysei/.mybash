@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Refresh my bash
+refreshmb() {
+  local ignoredFiles=("." ".." ".init" "README.md" ".gitignore" ".gitmodules")
+  local folders=("/" "/.scripts" "/.plugins")
+
+  for folder in $folders; do
+    for file in $(ls -ap $MYBASH$folder | grep -v /); do
+      if [[ ! $ignoredFiles[*] =~ $file ]]; then
+        source $MYBASH$folder/$file
+      fi
+    done
+  done
+  echo "MyBash updatedaa"
+}

@@ -2,16 +2,17 @@
 
 # Git config
 creategc() {
-  local GLOBALCONFIGFILE=.gitconfig
-  local CONFIGFILE=.gitconfig.$@
-  local DIR=/mnt/d/$@/
+  local CONFIGDIR=$MYBASH/.gitconfig
+  local CONFIGFILE=.$@
+  local PROJECTDIR=~/projects/$@/
 
-  if [ ! "$GLOBALCONFIGFILE" = "$CONFIGFILE" ]; then
-    if ! test -f ~/$CONFIGFILE; then
-      echo "[includeIf \"getdit/i:$DIR\"]" >> ~/$GLOBALCONFIGFILE
-      echo "        path = $CONFIGFILE"    >> ~/$GLOBALCONFIGFILE
-    fi
+  if ! test -f $CONFIGDIR/$CONFIGFILE; then
+    echo "\n[includeIf \"gitdir:$PROJECTDIR\"]"   >> $CONFIGDIR/.global
+    echo "  path = ./$CONFIGFILE"                 >> $CONFIGDIR/.global
+    echo "Global gitconfig updated"
+    
+    echo "[user]"                                 >> $CONFIGDIR/$CONFIGFILE
+    echo "  email = email@example.es"             >> $CONFIGDIR/$CONFIGFILE
+    echo "New $CONFIGFILE gitconfig created"
   fi
-
-  command vi ~/$CONFIGFILE
 }
