@@ -27,7 +27,7 @@ alias a="myaliases" # Show my aliases (short)
 alias aliases="a" # Show my aliases
 # show: aliases -f # Show my aliases file
 # show: aliases -e # Edit my aliases file
-alias ar="source $HOME/.mybash/.aliases" # Refresh terminal with my aliases updated
+alias art="source $MYBASH/.aliases" # Refresh terminal with my aliases updated
 
 # Git config
 alias cn="creategc" # Create git config for a specific project in volume D (cn myproject)
