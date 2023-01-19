@@ -12,5 +12,6 @@ includeFiles() {
 }
 
 includeFiles \
+  .plugins/.init \
   .scripts/.init \
   .aliases

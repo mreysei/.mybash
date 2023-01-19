@@ -1,0 +1,9 @@
+[submodule ".plugins/zsh-autosuggestions"]
+	path = .plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule ".plugins/zsh-z"]
+	path = .plugins/zsh-z
+	url = git@github.com:agkozak/zsh-z.git
+[submodule ".plugins/fzf"]
+	path = .plugins/fzf
+	url = git@github.com:junegunn/fzf.git

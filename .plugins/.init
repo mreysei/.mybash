@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source $MYBASH/.plugins/zsh-z/zsh-z.plugin.zsh
+source $MYBASH/.plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+if (( $+commands[fzf] )); then
+  $MYBASH/.plugins/fzf/install
+else 
+  [ -f $MYBASH/.plugins/.fzf-config ] && source $MYBASH/.plugins/.fzf-config
+fi
