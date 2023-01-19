@@ -17,11 +17,6 @@ alias cde="cd /mnt/e" # Go to volume E
 alias cdw="cd /mnt/c/Users/maike" # Go to windows home
 alias cdmb="cd $MYBASH" # Go to mybash configuration
 
-# Scripts
-alias s="myscripts" # Show my scripts file (short)
-alias scripts="s" # Show my scripts file
-# show: scripts -e # Edit my scripts file
-
 # My Aliases
 alias a="myaliases" # Show my aliases (short)
 alias aliases="a" # Show my aliases
