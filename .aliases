@@ -27,6 +27,7 @@ alias a="myaliases" # Show my aliases (short)
 alias aliases="a" # Show my aliases
 # show: aliases -f # Show my aliases file
 # show: aliases -e # Edit my aliases file
+alias ar="source $HOME/.mybash/.aliases" # Refresh terminal with my aliases updated
 
 # Git config
 alias cn="creategc" # Create git config for a specific project in volume D (cn myproject)
@@ -41,7 +42,7 @@ alias gce="npx gitmoji-cli -c " # Git commit with emoji (npx: carloscuesta/gitmo
 alias gl="git log --pretty=format:'%C(yellow)%h%C(reset)%C(magenta) 👤 %aN %C(dim)<%ae>%C(reset) %C(blue)(%ad)%C(reset):%n%s%n'" # Git log
 alias gls="git log --pretty=format:'%C(magenta)👤 %aN %C(blue)(%ar)%C(reset): %s'" # Git log with short date
 alias glf="git log" # Git log with full information
-alias gs="git status" # Git status
+alias gs="git status -sb" # Git status
 alias gst="git stash" # Git stash
 alias gsp="git stash pop" # Git stash pop (recupera los cambios y los elimina del stash)
 alias gsa="git stash apply" # Git stash apply (recupera los cambios pero lo mantiene del stash)
