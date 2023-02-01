@@ -12,5 +12,5 @@ refreshmb() {
       fi
     done
   done
-  echo "MyBash updatedaa"
+  echo "MyBash updated"
 }
