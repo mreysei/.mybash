@@ -11,3 +11,5 @@
 	path = ./.mreysei
 [includeIf "gitdir:~/projects/leanmind/"]
 	path = ./.leanmind
+[includeIf "gitdir:~/projects/katas/"]
+	path = ./.katas
