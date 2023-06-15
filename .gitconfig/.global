@@ -2,6 +2,7 @@
   autocrlf = input
 [user]
   name = Michael Reyes
+  workspace = workspace not defined
 [paper]
   log = npx gitmoji-log | less --tabs=4 -rFX
 [color]
@@ -13,3 +14,6 @@
 	path = ./.leanmind
 [includeIf "gitdir:~/projects/katas/"]
 	path = ./.katas
+  
+[include]
+	path = ~/.mybash/.gitconfig/private/.privates

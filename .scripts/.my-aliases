@@ -27,6 +27,10 @@ myaliases() {
 
       ALIASES+=("${ALIAS},${GRAY}#,${BLUE}${DESCRIPTION}${ENDCOLOR}\n")
     done
+    
+    command printf " ${GRAY}############################# ${ENDCOLOR}\n"
+    command printf " ${GRAY}# ℹ️ ${BLUE}List of my ${#ALIASES[@]} aliases! ${GRAY}#${ENDCOLOR}\n"
+    command printf " ${GRAY}############################# ${ENDCOLOR}\n"
     command printf "$ALIASES" | column -t -s,
   fi; fi
 }

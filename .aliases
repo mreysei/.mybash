@@ -45,7 +45,19 @@ alias gps="git push" # Git push
 alias gpl="git pull" # Git pull
 alias gf="git fetch" # Git fetch
 alias gt="git tag -n" # Git list tags
+alias gw="getworkspaceinfo"  # Git workspace details
 alias gr="npx git-reporter"  # Git reporter for current project (npx: ulisesantana/git-reporter)
+
+# Node
+alias ni="npm install" # Npm install
+alias nid="npm install --save-dev" # Npm install in dev dependencies
+alias nd="npm run dev" # Npm dev
+alias nl="npm run lint" # Npm lint
+alias nlf="npm run lint:fix" # Npm lint with fix
+alias nt="npm test" # Npm test
+alias ntw="npm run test:watch" # Npm test watching
+alias nas="npm run" # Npm all scripts
+alias ncd="rm -rf node_modules && echo 'node_modules folder removed' && rm package-lock.json && echo 'package-lock.json file removed' && ni" # Clean npm dependencies
 
 # SSH
 alias h="showssh" # Show ssh hosts (short)
