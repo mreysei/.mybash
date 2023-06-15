@@ -2,7 +2,7 @@
   autocrlf = input
 [user]
   name = Michael Reyes
-  workspace = workspace not defined
+  workspace = Workspace not defined
 [paper]
   log = npx gitmoji-log | less --tabs=4 -rFX
 [color]

@@ -9,9 +9,9 @@ getworkspaceinfo() {
   if [ -z "$EMAIL" ]; then
     echo "\e[41m Git is not initialized \e[0m"
   else
-    echo "\e[48;5;99mℹ️         Git config info           \e[0m"
-    echo      "\e[36mName:     \e[0m $NAME"
-    echo      "\e[36mEmail:    \e[0m $EMAIL"
-    echo      "\e[36mWorkspace:\e[0m $WORKSPACE"
+    echo "\e[36mℹ️ Git config info           \e[0m"
+    echo "\e[36mName:     \e[0m $NAME"
+    echo "\e[36mEmail:    \e[0m $EMAIL"
+    echo "\e[36mWorkspace:\e[0m $WORKSPACE"
   fi
 }
