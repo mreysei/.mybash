@@ -14,7 +14,7 @@ includeFiles() {
 }
 
 includeFiles \
-  variables \
+  zsh/.init \
   plugins/.init \
   scripts/.init \
   aliases

@@ -7,3 +7,6 @@
 [submodule "plugins/fzf"]
 	path = plugins/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "zsh/original"]
+	path = zsh/original
+	url = https://github.com/ohmyzsh/ohmyzsh.git

@@ -1,14 +1,16 @@
 #!/bin/bash
 
-local version=`zsh --version`
-local installFile=$MYBASH/zsh/install.sh
+export ZSH="$MYBASH/zsh/original"
+zshVersion=`zsh --version 2>&1 > /dev/null`
 
-if ! test -f installFile; then
-  curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> $installFile
+if [[ "$zshVersion" == *"not found"* ]]; then
+  echo "Asign zsh by default shell..."
+  chsh -s $ZSH
 fi
 
-if [[ ! "$version" == "zsh "* ]]; then
-  echo "Installing zsh..."
-  sh -c "$installFile"
-fi
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="skaro" 
 
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
