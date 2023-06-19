@@ -3,7 +3,7 @@
 ## Configuración
 
 1. Clonar repositorio en tu home (`cd ~`) con el nombre de `.mybash`.
-1. Ejecuta el comando `bash ~/.mybash/install.sh` para instalar mybash
+1. Ejecuta el comando `. ~/.mybash/install.sh` para instalar mybash
 1. Reinicia la consola o utiliza el comando `r` si estás actualizando el proyecto
 
 ## Paquetes a instalar
