@@ -27,4 +27,7 @@ refreshMyBash
 echo "\e[36mMyBash ➡️\e[0m Activating nvm for node version management"
 . ~/.mybash/node/nvm/nvm.sh
 
+echo "\e[36mMyBash ➡️\e[0m Installing the latest version of node"
+nvm install --lts
+
 echo "\e[36mMyBash ➡️\e[0m Installed!"
