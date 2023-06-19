@@ -1,0 +1,13 @@
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == *$MYBASH/plugins/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$MYBASH/plugins/fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "$MYBASH/plugins/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "$MYBASH/plugins/fzf/shell/key-bindings.zsh"

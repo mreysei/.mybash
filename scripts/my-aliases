@@ -1,9 +1,9 @@
 #!/bin/bash
 
-aliasesPath=$MYBASH/.aliases
+aliasesPath=$MYBASH/aliases
 
 # My Aliases
-myaliases() {
+myAliases() {
   if [[ $@ == '-e' ]]; then
     command vi $aliasesPath
   else; if [[ $@ == '-f' ]]; then

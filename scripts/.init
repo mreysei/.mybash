@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scriptPath=.scripts
+scriptPath=scripts
 ignoredFiles=("." ".." ".init")
 files=($(ls -a $MYBASH/$scriptPath/))
 

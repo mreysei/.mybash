@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get workspace info for git
-getworkspaceinfo() {
+getWorkspaceInfo() {
   local NAME=$(git config user.name)
   local EMAIL=$(git config user.email)
   local WORKSPACE=$(git config user.workspace)

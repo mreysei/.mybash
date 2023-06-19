@@ -7,11 +7,13 @@ includeFiles() {
   for var in "$@"; do
     if [ -f $MYBASH/$var ]; then
       . $MYBASH/$var
+    else
+      echo "File $MYBASH/$var not found"
     fi
   done
 }
 
 includeFiles \
-  .plugins/.init \
-  .scripts/.init \
-  .aliases
+  plugins/.init \
+  scripts/.init \
+  aliases

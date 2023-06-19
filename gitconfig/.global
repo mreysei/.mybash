@@ -9,11 +9,11 @@
   ui = true
 
 [includeIf "gitdir:~/projects/mreysei/"]
-	path = ./.mreysei
+	path = ./mreysei
 [includeIf "gitdir:~/projects/leanmind/"]
-	path = ./.leanmind
+	path = ./leanmind
 [includeIf "gitdir:~/projects/katas/"]
-	path = ./.katas
+	path = ./katas
   
 [include]
-	path = ~/.mybash/.gitconfig/private/.privates
+	path = ~/.mybash/gitconfig/private/.privates

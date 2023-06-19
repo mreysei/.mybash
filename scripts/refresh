@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Refresh my bash
-refreshmb() {
+refreshMyBash() {
   local ignoredFiles=("." ".." ".init" "README.md" ".gitignore" ".gitmodules")
-  local folders=("/" "/.scripts" "/.plugins")
+  local folders=("/" "/scripts" "/plugins")
 
   for folder in $folders; do
     for file in $(ls -ap $MYBASH$folder | grep -v /); do

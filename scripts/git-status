@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Git status with workspace info
+gitStatusWithWorkspaceInfo() {
+  local EMAIL=$(git config user.email)
+
+  if [ -z "$EMAIL" ]; then
+    gw
+  else
+    gw
+    echo '\n\e[36m✍️ Git status\e[0m'
+    git status -sb
+  fi
+}

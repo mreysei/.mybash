@@ -13,7 +13,7 @@ fi
 3. En tu home, en tu `.gitconfig`:
 ```
 [include]
-	path = ~/.mybash/.gitconfig/.global
+	path = ~/.mybash/gitconfig/.global
 ```
 4. Reinicia la consola o utiliza el comando `r` si estás actualizando el proyecto
 
