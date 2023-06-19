@@ -21,7 +21,7 @@ echo "\e[36mMyBash ➡️\e[0m Adding or replacing gitconfig with mybash gitconf
 cp ~/.mybash/templates/.gitconfig ~/.gitconfig
 
 echo "\e[36mMyBash ➡️\e[0m Refreshing console with a new configuration"
-.  ~/.mybash/scripts/refresh
+.  ~/.mybash/.init
 refreshMyBash
 
 echo "\e[36mMyBash ➡️\e[0m Installed!"
