@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "\e[36mMyBash ➡️\e[0m Installing..."
 
@@ -19,5 +19,9 @@ cat ~/.mybash/templates/.zshrc >> ~/.zshrc
 
 echo "\e[36mMyBash ➡️\e[0m Adding or replacing gitconfig with mybash gitconfig"
 cp ~/.mybash/templates/.gitconfig ~/.gitconfig
+
+echo "\e[36mMyBash ➡️\e[0m Refreshing console with a new configuration"
+.  ~/.mybash/scripts/refresh
+refreshMyBash
 
 echo "\e[36mMyBash ➡️\e[0m Installed!"
