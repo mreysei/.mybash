@@ -3,19 +3,23 @@
 ## Configuración
 
 1. Clonar repositorio en tu home (`cd ~`) con el nombre de `.mybash`.
-2. En tu home, añade al final de tu `.bashrc`, `.zshrc` o similares:
+2. En tu home, añade al final de tu `.zshrc`:
 ```
 # mreysei/mybash
 if [ -f ~/.mybash/.init ]; then
     . ~/.mybash/.init
 fi
 ```
-3. En tu home, en tu `.gitconfig`:
+4. Ejecuta el siguiente comando:
+```
+. ~/.mybash/.init
+```
+5. En tu home, en tu `.gitconfig`:
 ```
 [include]
 	path = ~/.mybash/gitconfig/.global
 ```
-4. Reinicia la consola o utiliza el comando `r` si estás actualizando el proyecto
+1. Reinicia la consola o utiliza el comando `r` si estás actualizando el proyecto
 
 ## Paquetes a instalar
 

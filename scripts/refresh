@@ -2,7 +2,7 @@
 
 # Refresh my bash
 refreshMyBash() {
-  local ignoredFiles=("." ".." ".init" "README.md" ".gitignore" ".gitmodules")
+  local ignoredFiles=("." ".." ".init" ".install" "README.md" ".gitignore" ".gitmodules")
   local folders=("/" "/scripts" "/plugins")
 
   for folder in $folders; do
