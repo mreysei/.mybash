@@ -5,16 +5,15 @@ zshVersion=`zsh --version 2>&1 > /dev/null`
 # Auto installer and assigner
 if [[ "$zshVersion" == *"not found"* ]]; then
   echo "Installing zsh..."
-  sudo apt install zsh
+  sudo apt install zsh -y
   echo "Assign zsh by default shell..."
   chsh -s $(which zsh)
 fi
 
-export ZSH="$MYBASH/zsh/oh-my-zsh"
-
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="skaro" 
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+initialMessage="# Oh My ZSH from MyBash"
+if ! grep -q "$initialMessage" ~/.zshrc; then
+  echo "$initialMessage"                      >> ~/.zshrc
+  echo "if [ -f ~/.mybash/zsh/.zshrc ]; then" >> ~/.zshrc
+  echo "    . ~/.mybash/zsh/.zshrc"           >> ~/.zshrc
+  echo "fi"                                   >> ~/.zshrc
+fi
