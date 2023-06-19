@@ -9,8 +9,13 @@ refreshMyBash() {
     for file in $(ls -ap $MYBASH$folder | grep -v /); do
       if [[ ! $ignoredFiles[*] =~ $file ]]; then
         source $MYBASH$folder/$file
+        if [[ $@ == '--verbose' ]]; then
+          echo "$MYBASH$folder/$file file updated"
+        fi
       fi
     done
   done
-  echo "MyBash updated"
+  if [[ $@ == '--verbose' ]]; then
+    echo "\n\e[32m✅ MyBash updated"
+  fi
 }

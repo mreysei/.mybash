@@ -2,7 +2,7 @@
 
 # Git config
 createGitConfig() {
-  local CONFIGDIR=$MYBASH/.gitconfig
+  local CONFIGDIR=$MYBASH/gitconfig
   local CONFIGFILE=.$@
   local PROJECTDIR=~/projects/$@/
 

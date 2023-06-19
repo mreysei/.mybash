@@ -2,12 +2,12 @@
 
 # Git status with workspace info
 gitStatusWithWorkspaceInfo() {
-  local EMAIL=$(git config user.email)
+  local STATUS=`git status 2>&1 > /dev/null`
 
-  if [ -z "$EMAIL" ]; then
-    gw
+  if [[ "$STATUS" == *"not a git repository"* ]]; then
+    echo "\e[41m Git is not initialized or you are not in a repository folder \e[0m"
   else
-    gw
+    getWorkspaceInfo
     echo '\n\e[36m✍️ Git status\e[0m'
     git status -sb
   fi

@@ -9,9 +9,13 @@ getWorkspaceInfo() {
   if [ -z "$EMAIL" ]; then
     echo "\e[41m Git is not initialized \e[0m"
   else
-    echo "\e[36mℹ️ Git config info           \e[0m"
-    echo "\e[36mName:     \e[0m $NAME"
-    echo "\e[36mEmail:    \e[0m $EMAIL"
-    echo "\e[36mWorkspace:\e[0m $WORKSPACE"
+    echo "\e[36mℹ️ Git configuration \e[0m"
+    echo "\e[32mName:     \e[0m $NAME"
+    echo "\e[32mEmail:    \e[0m $EMAIL"
+    if [ -z "$WORKSPACE" ]; then
+      echo "\e[33mWorkspace not defined, using a global configuration"
+    else
+      echo "\e[32mWorkspace:\e[0m $WORKSPACE"
+    fi
   fi
 }
