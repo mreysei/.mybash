@@ -1,0 +1,14 @@
+#!/bin/bash
+
+local version=`zsh --version`
+local installFile=$MYBASH/zsh/install.sh
+
+if ! test -f installFile; then
+  curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> $installFile
+fi
+
+if [[ ! "$version" == "zsh "* ]]; then
+  echo "Installing zsh..."
+  sh -c "$installFile"
+fi
+

@@ -13,6 +13,7 @@ createGitConfig() {
     
     echo "[user]"                                 >> $CONFIGDIR/$CONFIGFILE
     echo "  email = email@example.es"             >> $CONFIGDIR/$CONFIGFILE
+    echo "  workspace = $@"                       >> $CONFIGDIR/$CONFIGFILE
     echo "New $CONFIGFILE gitconfig created"
   fi
 }
