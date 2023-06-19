@@ -10,3 +10,6 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "node/nvm"]
+	path = node/nvm
+	url = git@github.com:nvm-sh/nvm.git

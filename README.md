@@ -12,6 +12,3 @@
 - https://github.com/agkozak/zsh-z -> Para saltar entre ficheros
 - https://github.com/marlonrichert/zsh-autocomplete -> Para autocompletar antiguos comandos
 - https://github.com/junegunn/fzf -> Para tener un menú seleccionable
-
-## Otras cosas
-- Utilizo el tema de zsh llamado "skaro"

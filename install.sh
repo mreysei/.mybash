@@ -24,4 +24,7 @@ echo "\e[36mMyBash ➡️\e[0m Refreshing console with a new configuration"
 .  ~/.mybash/.init
 refreshMyBash
 
+echo "\e[36mMyBash ➡️\e[0m Activating nvm for node version management"
+. ~/.mybash/node/nvm/nvm.sh
+
 echo "\e[36mMyBash ➡️\e[0m Installed!"
