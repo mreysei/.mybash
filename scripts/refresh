@@ -3,7 +3,7 @@
 # Refresh my bash
 refreshMyBash() {
   local ignoredFiles=("." ".." ".init" "install.sh" "README.md" ".gitignore" ".gitmodules")
-  local folders=("/" "/scripts" "/plugins")
+  local folders=("/" "/scripts" "/plugins" "/zsh")
 
   for folder in $folders; do
     for file in $(ls -ap $MYBASH$folder | grep -v /); do
