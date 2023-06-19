@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Npm reinstall dependencies
+npmReinstall() {
+  local routes=(
+    'package-lock.json'
+    'node_modules'
+  )
+
+  for route in "${routes[@]}"; do
+    if [ -f "$route" ]; then
+      rm $route
+      echo "$route file removed" 
+    elif [ -d "$route" ]; then
+      rm -rf $route  
+      echo "$route folder removed" 
+    fi
+  done
+
+  npm install
+}
