@@ -1,7 +1,16 @@
 #!/bin/bash
 
-export ZSH="$MYBASH/zsh/original"
 zshVersion=`zsh --version 2>&1 > /dev/null`
+
+# Auto installer and assigner
+if [[ "$zshVersion" == *"not found"* ]]; then
+  echo "Installing zsh..."
+  sudo apt install zsh
+  echo "Assign zsh by default shell..."
+  chsh -s $(which zsh)
+fi
+
+export ZSH="$MYBASH/zsh/oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="skaro" 
@@ -9,9 +18,3 @@ ZSH_THEME="skaro"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# Auto installer and assigner
-if [[ "$zshVersion" == *"not found"* ]]; then
-  echo "Assign zsh by default shell..."
-  chsh -s $ZSH
-fi
