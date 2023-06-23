@@ -1,33 +1,47 @@
 #!/bin/bash
 
-echo "\e[36mMyBash ➡️\e[0m Installing..."
+reset="\e[0m"
+green="\e[32m"
+blue="\e[36m"
+mbprefix="\e[36mMyBash ➡️"
 
-echo "\e[36mMyBash ➡️\e[0m Checking if zsh is installed..."
+echo "$mbprefix$reset Installing..."
+
+echo "$mbprefix$reset Checking if zsh is installed..."
 zshVersion=`zsh --version 2>&1 > /dev/null`
 
 if [[ "$zshVersion" == *"not found"* ]]; then
-  echo "\e[36mMyBash ➡️\e[0m Installing zsh..."
+  echo "$mbprefix$reset Installing zsh..."
   sudo apt install zsh -y
-  echo "\e[36mMyBash ➡️\e[0m Assign zsh by default shell..."
+  echo "$mbprefix$green Zsh installed!"
+  echo "$mbprefix$reset Assign zsh by default shell..."
   chsh -s $(which zsh)
 else 
-  echo "\e[36mMyBash ➡️\e[0m Zsh is already installed!"
+  echo "$mbprefix$green Zsh is already installed!"
 fi
 
-echo "\e[36mMyBash ➡️\e[0m Adding mybash config to ~/.zshrc"
+echo "$mbprefix$reset Adding mybash config to ~/.zshrc"
+echo "\n" >> ~/.zshrc
 cat ~/.mybash/templates/.zshrc >> ~/.zshrc
 
-echo "\e[36mMyBash ➡️\e[0m Adding or replacing gitconfig with mybash gitconfig"
+echo "$mbprefix$reset Adding or replacing gitconfig with mybash gitconfig"
 cp ~/.mybash/templates/.gitconfig ~/.gitconfig
 
-echo "\e[36mMyBash ➡️\e[0m Refreshing console with a new configuration"
+echo "$mbprefix$reset Refreshing console with a new configuration"
 .  ~/.mybash/.init
 refreshMyBash
 
-echo "\e[36mMyBash ➡️\e[0m Activating nvm for node version management"
+echo "$mbprefix$reset Activating nvm for node version management"
 . ~/.mybash/node/nvm/nvm.sh
 
-echo "\e[36mMyBash ➡️\e[0m Installing the latest version of node"
-nvm install --lts
+echo "$mbprefix$reset Checking if node is installed"
+nodeVersion=`nvm use --lts 2>&1 > /dev/null`
 
-echo "\e[36mMyBash ➡️\e[0m Installed!"
+if [[ "$nodeVersion" == *"is not yet installed"* ]]; then
+  echo "$mbprefix$reset Installing the latest version of Node..."
+  nvm install --lts
+else 
+  echo "$mbprefix$green The latest version of Node is already installed!"
+fi
+
+echo "$mbprefix$green Installed!"
