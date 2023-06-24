@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 reset="\e[0m"
 green="\e[32m"
@@ -10,7 +10,7 @@ echo "$mbprefix$reset Installing..."
 echo "$mbprefix$reset Checking if zsh is installed..."
 zshVersion=`zsh --version 2>&1 > /dev/null`
 
-if [[ "$zshVersion" == *"not found"* ]]; then
+if [[ "$zshVersion" == *"not found"* || "$zshVersion" == *"No se ha encontrado"* ]]; then
   echo "$mbprefix$reset Installing zsh..."
   sudo apt install zsh -y
   echo "$mbprefix$green Zsh installed!"

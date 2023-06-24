@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Git status with workspace info
 gitStatusWithWorkspaceInfo() {
   local STATUS=`git status 2>&1 > /dev/null`
 
-  if [[ "$STATUS" == *"not a git repository"* ]]; then
+  if [[ "$STATUS" == *"not a git repository"* || "$STATUS" == *"no es un repositorio git"* ]]; then
     echo "\e[41m Git is not initialized or you are not in a repository folder \e[0m"
   else
     getWorkspaceInfo

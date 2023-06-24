@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source $MYBASH/plugins/zsh-z/zsh-z.plugin.zsh
 source $MYBASH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
