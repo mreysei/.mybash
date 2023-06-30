@@ -15,6 +15,6 @@ includeFiles() {
 
 includeFiles \
   zsh/configuration \
-  plugins/.init \
+  plugins/.run \
   scripts/.init \
   aliases

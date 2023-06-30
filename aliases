@@ -52,12 +52,13 @@ alias gr="npx git-reporter"  # Git reporter for current project (npx: ulisesanta
 alias ni="npm install" # Npm install
 alias nid="npm install --save-dev" # Npm install in dev dependencies
 alias nri="npmReinstall" # Npm reinstall dependencies
+alias nr="npm run" # Npm run (Print all npm scripts)
 alias nd="npm run dev" # Npm dev
+alias ns="npm start" # Npm start
 alias nl="npm run lint" # Npm lint
 alias nlf="npm run lint:fix" # Npm lint with fix
 alias nt="npm test" # Npm test
 alias ntw="npm run test:watch" # Npm test watching
-alias nas="npm run" # Npm all scripts
 
 # SSH
 alias h="showSSH" # Show ssh hosts (short)
