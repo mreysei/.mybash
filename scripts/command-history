@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Select from command history
+commandHistory() {
+  local SELECTED=$(history | sort -rn | f --exact | awk '{ for(i=2; i<NF; i++) {printf("%s ", $i)} print $NF }')
+  if [[ ! -z "$SELECTED" ]]; then
+    echo "Executing \"$SELECTED\" command..."
+    eval "$SELECTED"
+  fi
+}

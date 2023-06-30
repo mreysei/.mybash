@@ -5,6 +5,7 @@ alias c="clear" # Clean terminal
 alias q="exit" # Exit terminal
 alias quit="q" # Exit terminal
 alias r="refreshMyBash --verbose" # Refresh terminal with MyBash changes
+alias ch="commandHistory" # Select a command from history
 
 # Directory
 alias l="ls -CF" # Show files and directories
@@ -68,4 +69,4 @@ alias hosts="h" # Show ssh hosts
 
 # Plugins
 alias j="z" # Jump to folder (plugin: agkozak/zsh-z)
-alias f="fzf" # Finder with selectable (plugin: junegunn/fzf)
+alias s="fzf" # Finder with selectable (plugin: junegunn/fzf)
