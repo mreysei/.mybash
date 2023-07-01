@@ -14,6 +14,8 @@
 	path = ./leanmind
 [includeIf "gitdir:~/projects/katas/"]
 	path = ./katas
+[includeIf "gitdir:~/projects/formacion/"]
+	path = ./formacion
   
 [include]
 	path = ~/.mybash/gitconfig/private/.privates
