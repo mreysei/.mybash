@@ -24,6 +24,7 @@ alias a="myAliases" # Show my aliases (short)
 alias aliases="a" # Show my aliases
 # show: aliases -f # Show my aliases file
 # show: aliases -e # Edit my aliases file
+# show: aliases -s # Find and select alias
 
 # Git config
 alias cn="createGitConfig" # Create git config for a specific project in volume D (cn myproject)
@@ -69,4 +70,4 @@ alias hosts="h" # Show ssh hosts
 
 # Plugins
 alias j="z" # Jump to folder (plugin: agkozak/zsh-z)
-alias s="fzf" # Finder with selectable (plugin: junegunn/fzf)
+alias f="fzf" # Finder with selectable (plugin: junegunn/fzf)
