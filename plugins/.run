@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
+source $MYBASH/plugins/zsh-z/zsh-z.plugin.zsh
+source $MYBASH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $MYBASH/plugins/fzf-configuration ] && source $MYBASH/plugins/fzf-configuration
 local FZFVERSION=`fzf --version 2>&1 > /dev/null`
 
 if [[ "$FZFVERSION" == *"command not found"* ]]; then
   $MYBASH/plugins/fzf/install --all
-else 
   [ -f $MYBASH/plugins/fzf-configuration ] && source $MYBASH/plugins/fzf-configuration
 fi
 
-source $MYBASH/plugins/zsh-z/zsh-z.plugin.zsh
-source $MYBASH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
