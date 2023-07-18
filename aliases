@@ -21,10 +21,10 @@ alias cdmb="cd $MYBASH" # Go to mybash configuration
 
 # My Aliases
 alias a="myAliases" # Show my aliases (short)
-alias aliases="a" # Show my aliases
+alias aliases="a" # Find and select alias
+# show: aliases -s # Show and select alias
 # show: aliases -f # Show my aliases file
 # show: aliases -e # Edit my aliases file
-# show: aliases -s # Find and select alias
 
 # Git config
 alias cn="createGitConfig" # Create git config for a specific project in volume D (cn myproject)
@@ -32,7 +32,7 @@ alias cr="vi ~/.gitconfig" # Edit gitconfig routing file
 alias cg="vi $MYBASH/gitconfig/.global" # Edit global gitconfig file
 
 # Git
-alias ga="git add . " # Git add
+alias ga="git add ." # Git add
 alias gc="git commit" # Git commit
 alias gca="git commit --amend" # Git commit in amend mode
 alias gce="npx gitmoji-cli -c " # Git commit with emoji (npx: carloscuesta/gitmoji-cli)
@@ -57,6 +57,7 @@ alias nri="npmReinstall" # Npm reinstall dependencies
 alias nr="npm run" # Npm run (Print all npm scripts)
 alias nd="npm run dev" # Npm dev
 alias ns="npm start" # Npm start
+alias nb="npm build" # Npm start
 alias nl="npm run lint" # Npm lint
 alias nlf="npm run lint:fix" # Npm lint with fix
 alias nt="npm test" # Npm test

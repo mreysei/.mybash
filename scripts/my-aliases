@@ -31,10 +31,6 @@ myAliases() {
   if [[ $@ == '-e' ]]; then
     command vi $aliasesPath
   else; if [[ $@ == '-s' ]]; then
-    selectAlias
-  else; if [[ $@ == '-f' ]]; then
-    command cat $aliasesPath
-  else
     local ALIASES=("")
 
     local BLUE=$'\e[1;34m'
@@ -58,5 +54,9 @@ myAliases() {
     command printf " ${GRAY}# ℹ️ ${BLUE}List of my ${#ALIASES[@]} aliases! ${GRAY}#${ENDCOLOR}\n"
     command printf " ${GRAY}############################# ${ENDCOLOR}\n"
     command printf "$ALIASES" | column -t -s,
+  else; if [[ $@ == '-f' ]]; then
+    command cat $aliasesPath
+  else
+    selectAlias
   fi; fi; fi
 }
