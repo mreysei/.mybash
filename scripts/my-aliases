@@ -3,7 +3,7 @@
 aliasesPath=$MYBASH/aliases
 
 selectAlias() {
-  local ALIASES=("")
+  local ALIASES=()
 
   grep -E "^alias |^# show: " $aliasesPath | while read -r LINE; do
     local PREALIAS=$(echo $LINE | awk -F '=' '{print $1}')
@@ -19,7 +19,6 @@ selectAlias() {
   done
   
   local SELECTED=$(printf "$ALIASES" | column -t -s, | f --exact | awk '{print}' )
-  # local SELECTEDCOMMAND=$(printf "$SELECTED" | )
   if [[ ! -z "$SELECTED" ]]; then
     echo "Executing \"$SELECTED\" command..."
     eval "$SELECTED"
@@ -31,7 +30,7 @@ myAliases() {
   if [[ $@ == '-e' ]]; then
     command vi $aliasesPath
   else; if [[ $@ == '-s' ]]; then
-    local ALIASES=("")
+    local ALIASES=()
 
     local BLUE=$'\e[1;34m'
     local GRAY=$'\e[1;90m'
@@ -53,7 +52,7 @@ myAliases() {
     command printf " ${GRAY}############################# ${ENDCOLOR}\n"
     command printf " ${GRAY}# ℹ️ ${BLUE}List of my ${#ALIASES[@]} aliases! ${GRAY}#${ENDCOLOR}\n"
     command printf " ${GRAY}############################# ${ENDCOLOR}\n"
-    command printf "$ALIASES" | column -t -s,
+    command printf " $ALIASES" | column -t -s,
   else; if [[ $@ == '-f' ]]; then
     command cat $aliasesPath
   else

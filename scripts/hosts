@@ -6,13 +6,11 @@ showSSH() {
 
   if [[ $@ == '-e' ]]; then
     command vi ~/.ssh/config
+  else; if [[ $@ == '-s' ]]; then
+    print "$HOSTS"
   else
-    if [[ $@ == '-s' ]]; then
-      local SELECTEDHOST=$(print "$HOSTS" | fzf)
-      echo "Connecting to $SELECTEDHOST..."
-      eval "ssh $SELECTEDHOST"
-    else
-      print "$HOSTS"
-    fi
-  fi
+    local SELECTEDHOST=$(print "$HOSTS" | fzf)
+    echo "Connecting to $SELECTEDHOST..."
+    eval "ssh $SELECTEDHOST"
+  fi; fi
 }

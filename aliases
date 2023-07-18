@@ -20,7 +20,7 @@ alias cdw="cd /mnt/c/Users/maike" # Go to windows home
 alias cdmb="cd $MYBASH" # Go to mybash configuration
 
 # My Aliases
-alias a="myAliases" # Show my aliases (short)
+alias a="myAliases" # Find and select alias (short version)
 alias aliases="a" # Find and select alias
 # show: aliases -s # Show and select alias
 # show: aliases -f # Show my aliases file
@@ -64,10 +64,10 @@ alias nt="npm test" # Npm test
 alias ntw="npm run test:watch" # Npm test watching
 
 # SSH
-alias h="showSSH" # Show ssh hosts (short)
-alias hosts="h" # Show ssh hosts
+alias h="showSSH" # Select and connect to ssh host (short)
+alias hosts="h" # Select and connect to ssh host
 # show: hosts -e # Edit ssh hosts
-# show: hosts -s # Select and connect to ssh host
+# show: hosts -s # Show ssh hosts
 
 # Plugins
 alias j="z" # Jump to folder (plugin: agkozak/zsh-z)
