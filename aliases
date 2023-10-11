@@ -12,7 +12,12 @@ alias l="ls -CF" # Show files and directories
 alias la="ls -A" # Show all files and directories
 alias ll="ls -alF" # Show files and directories with information
 
-# Routed
+# System
+alias sp="htop" # Show system process
+alias ss="sudo shutdown" # Shutdown system
+alias sr="sudo reboot" # Reboot system
+
+# Routed (windows)
 alias cdd="cd /mnt/d" # Go to volume D
 alias cdc="cd /mnt/c" # Go to volume C
 alias cde="cd /mnt/e" # Go to volume E
