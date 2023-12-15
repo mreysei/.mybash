@@ -74,6 +74,9 @@ alias hosts="h" # Select and connect to ssh host
 # show: hosts -e # Edit ssh hosts
 # show: hosts -s # Show ssh hosts
 
+# IDE
+alias idea="intellij-idea-community" # Open IntelliJ IDEA
+
 # Plugins
 alias j="z" # Jump to folder (plugin: agkozak/zsh-z)
 alias f="fzf" # Finder with selectable (plugin: junegunn/fzf)

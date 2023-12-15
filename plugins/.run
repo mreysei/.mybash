@@ -8,7 +8,7 @@ source $MYBASH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $MYBASH/plugins/fzf-configuration ] && source $MYBASH/plugins/fzf-configuration
 local FZFVERSION=`fzf --version 2>&1 > /dev/null`
 
-if [[ "$FZFVERSION" == *"command not found"* ]]; then
+if [[ "$FZFVERSION" == *"command not found"* || "$FZFVERSION" == *"No se ha encontrado"*  ]]; then
   $MYBASH/plugins/fzf/install --all
   [ -f $MYBASH/plugins/fzf-configuration ] && source $MYBASH/plugins/fzf-configuration
 fi
@@ -16,6 +16,6 @@ fi
 # htop
 local HTOPVERSION=`htop --version 2>&1 > /dev/null`
 
-if [[ "$HTOPVERSION" == *"command not found"* ]]; then
+if [[ "$HTOPVERSION" == *"command not found"* || "$HTOPVERSION" == *"No se ha encontrado"* ]]; then
   sudo apt-get install htop
 fi

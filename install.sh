@@ -21,7 +21,7 @@ else
 fi
 
 echo "$mbprefix$reset Adding mybash config to ~/.zshrc"
-echo "\n" >> ~/.zshrc
+echo '\n' >> ~/.zshrc
 cat ~/.mybash/templates/.zshrc >> ~/.zshrc
 
 echo "$mbprefix$reset Adding or replacing gitconfig with mybash gitconfig"
