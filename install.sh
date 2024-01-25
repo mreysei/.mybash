@@ -20,9 +20,14 @@ else
   echo "$mbprefix$green Zsh is already installed!"
 fi
 
-echo "$mbprefix$reset Adding mybash config to ~/.zshrc"
-echo '\n' >> ~/.zshrc
-cat ~/.mybash/templates/.zshrc >> ~/.zshrc
+echo "$mbprefix$reset Checking if mybash config is added"
+if cat ~/.zshrc | grep -q "mybash"; then
+  echo "$mbprefix$green Mybash config is already added!"
+else 
+  echo "$mbprefix$reset Adding mybash config to ~/.zshrc"
+  echo '\n' >> ~/.zshrc
+  cat ~/.mybash/templates/.zshrc >> ~/.zshrc
+fi
 
 echo "$mbprefix$reset Adding or replacing gitconfig with mybash gitconfig"
 cp ~/.mybash/templates/.gitconfig ~/.gitconfig
@@ -42,6 +47,16 @@ if [[ "$nodeVersion" == *"is not yet installed"* ]]; then
   nvm install --lts
 else 
   echo "$mbprefix$green The latest version of Node is already installed!"
+fi
+
+echo "$mbprefix$reset Checking if npm configuration is added"
+npmConfig=`npm config get init-author-username 2>&1 > /dev/null`
+
+if [[ "$npmConfig" == "undefined" ]]; then
+  echo "$mbprefix$reset Adding npm configuration..."
+  cp ~/.mybash/templates/.npmrc ~/.npmrc
+else 
+  echo "$mbprefix$green Npm configuration is already added!"
 fi
 
 echo "$mbprefix$green Installed!"
