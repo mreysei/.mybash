@@ -3,7 +3,7 @@
 reset="\e[0m"
 green="\e[32m"
 blue="\e[36m"
-mbprefix="\e[36mMyBash ➡️"
+mbprefix="\e[36mMyBash ➡️ "
 
 echo "$mbprefix$reset Installing..."
 
@@ -50,9 +50,9 @@ else
 fi
 
 echo "$mbprefix$reset Checking if npm configuration is added"
-npmConfig=`npm config get init-author-username 2>&1 > /dev/null`
+npmConfig=`npm config get init-author-username`
 
-if [[ "$npmConfig" == "undefined" ]]; then
+if [[ "$npmConfig" == *"undefined"* ]]; then
   echo "$mbprefix$reset Adding npm configuration..."
   cp ~/.mybash/templates/.npmrc ~/.npmrc
 else 
