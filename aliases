@@ -68,6 +68,14 @@ alias nlf="npm run lint:fix" # Npm lint with fix
 alias nt="npm test" # Npm test
 alias ntw="npm run test:watch" # Npm test watching
 
+# Docker
+alias d="sudo docker" # Docker
+alias dps="sudo docker ps" # Docker ps
+alias dpsp="sudo docker ps --format 'table {{.Names}}	->	{{range (split .Ports \", \")}}{{print \"	\"}}{{println .}}{{print \"		\"}}{{end}}'" # Docker ports
+alias dc="sudo docker container ls" # Docker containers
+alias di="sudo docker image ls" # Docker images
+alias dv="sudo docker volume ls" # Docker volumes
+
 # SSH
 alias h="showSSH" # Select and connect to ssh host (short)
 alias hosts="h" # Select and connect to ssh host
