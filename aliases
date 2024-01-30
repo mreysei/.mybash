@@ -72,15 +72,16 @@ alias ntw="npm run test:watch" # Npm test watching
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail' # Laravel sail
 
 # Docker
-alias d="sudo docker" # Docker
-alias dps="sudo docker ps" # Docker ps
-alias dpsp="sudo docker ps --format 'table {{.Names}}	->	{{range (split .Ports \", \")}}{{print \"	\"}}{{println .}}{{print \"		\"}}{{end}}'" # Docker ports
-alias dc="sudo docker container ls" # Docker containers
-alias di="sudo docker image ls" # Docker images
-alias dv="sudo docker volume ls" # Docker volumes
-alias dcu="sudo docker compose up -d " # Docker compose up
-alias dcd="sudo docker compose down" # Docker compose down
-alias dcr="sudo docker compose down && sudo docker compose up -d" # Docker compose restart
+### Si no funciona sin sudo -> https://docs.docker.com/engine/install/linux-postinstall/
+alias d="docker" # Docker
+alias dps="docker ps" # Docker ps
+alias dpsp="docker ps --format 'table {{.Names}}	->	{{range (split .Ports \", \")}}{{print \"	\"}}{{println .}}{{print \"		\"}}{{end}}'" # Docker ports
+alias dc="docker container ls" # Docker containers
+alias di="docker image ls" # Docker images
+alias dv="docker volume ls" # Docker volumes
+alias dcu="docker compose up -d " # Docker compose up
+alias dcd="docker compose down" # Docker compose down
+alias dcr="dcd && dcu" # Docker compose restart
 
 # SSH
 alias h="showSSH" # Select and connect to ssh host (short)
