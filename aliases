@@ -88,6 +88,10 @@ alias h="showSSH" # Select and connect to ssh host (short)
 alias hosts="h" # Select and connect to ssh host
 # show: hosts -e # Edit ssh hosts
 # show: hosts -s # Show ssh hosts
+alias hs="sudo systemctl status ssh" # Show ssh status
+alias hst="sudo systemctl start ssh" # Start ssh
+alias hr="sudo systemctl restart ssh" # Restart ssh
+alias he="sudo systemctl enable ssh" # Enable ssh on startup
 
 # IDE
 alias idea="intellij-idea-community" # Open IntelliJ IDEA
