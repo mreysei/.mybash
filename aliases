@@ -92,6 +92,11 @@ alias hs="sudo systemctl status ssh" # Show ssh status
 alias hst="sudo systemctl start ssh" # Start ssh
 alias hr="sudo systemctl restart ssh" # Restart ssh
 alias he="sudo systemctl enable ssh" # Enable ssh on startup
+alias hrf="sudo mkdir -p -m0755 /var/run/sshd && systemctl restart ssh.service" # Restart ssh service forced
+
+# Manage disks
+alias md="sudo mount /dev/sda" # Mount disk + folder on mount (md /storage)
+alias mdf="sudo mount -t ntfs-3g /dev/sda" # Mount disk in NFTS-3G format + folder on mount (mdf /storage)
 
 # IDE
 alias idea="intellij-idea-community" # Open IntelliJ IDEA
