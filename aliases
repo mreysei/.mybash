@@ -7,10 +7,11 @@ alias quit="q" # Exit terminal
 alias r="refreshMyBash --verbose" # Refresh terminal with MyBash changes
 alias ch="commandHistory" # Select a command from history
 
-# Directory
+# Files and directories
 alias l="ls -CF" # Show files and directories
 alias la="ls -A" # Show all files and directories
 alias ll="ls -alF" # Show files and directories with information
+alias watch="tail -f" # Watch file changes
 
 # System
 alias sp="htop" # Show system process
