@@ -10,6 +10,8 @@
 
 [includeIf "gitdir:~/projects/mreysei/"]
 	path = ./mreysei
+[includeIf "gitdir:~/projects/dev/"]
+	path = ./dev
 [includeIf "gitdir:~/projects/leanmind/"]
 	path = ./leanmind
 [includeIf "gitdir:~/projects/katas/"]
