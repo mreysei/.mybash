@@ -76,6 +76,7 @@ IS_SSH=$? # 0=true, 1=false
 HEADLINE_USER_CMD='echo $USER'
 HEADLINE_HOST_CMD='hostname -s' # consider 'basename "$VIRTUAL_ENV"' to replace host with environment
 HEADLINE_PATH_CMD='print -rP "%~"'
+HEADLINE_GIT_WORKSPACE_CMD='git config user.workspace'
 HEADLINE_GIT_BRANCH_CMD='headline_git_branch'
 HEADLINE_GIT_STATUS_CMD='headline_git_status'
 
@@ -84,12 +85,15 @@ HEADLINE_USER_PREFIX='' # consider " "
 HEADLINE_HOST_PREFIX='' # consider " "
 HEADLINE_PATH_PREFIX='' # consider " "
 HEADLINE_BRANCH_PREFIX='' # consider " "
+HEADLINE_WORKSPACE_PREFIX=' [' # consider " "
+HEADLINE_WORKSPACE_SUFIX=']' # consider " "
 
 # Info joints
 HEADLINE_USER_BEGIN=''
 if [ $IS_SSH = 0 ]; then HEADLINE_USER_BEGIN='=> '; fi
 HEADLINE_USER_TO_HOST=' @ '
 HEADLINE_HOST_TO_PATH=': '
+HEADLINE_WORKSPACE_BEGIN=''
 HEADLINE_PATH_TO_BRANCH=' | ' # only used when no padding between <path> and <branch>
 HEADLINE_PATH_TO_PAD='' # used if padding between <path> and <branch>
 HEADLINE_PAD_TO_BRANCH='' # used if padding between <path> and <branch>
@@ -364,10 +368,11 @@ headline_precmd() {
   local err=$?
 
   # Information
-  local user_str host_str path_str branch_str status_str
+  local user_str host_str path_str workspace_str branch_str status_str
   user_str=$(eval $HEADLINE_USER_CMD)
   host_str=$(eval $HEADLINE_HOST_CMD)
   path_str=$(eval $HEADLINE_PATH_CMD)
+  workspace_str=$(eval $HEADLINE_GIT_WORKSPACE_CMD)
   branch_str=$(eval $HEADLINE_GIT_BRANCH_CMD)
   status_str=$(eval $HEADLINE_GIT_STATUS_CMD)
 
@@ -378,18 +383,25 @@ headline_precmd() {
   _HEADLINE_INFO_RIGHT=''
   _HEADLINE_LINE_RIGHT=''
 
+  # Git Workspace
+  if (( ${#workspace_str} )); then
+    _headline_part JOINT "$HEADLINE_WORKSPACE_SUFIX" right
+    _headline_part WORKSPACE "$workspace_str" right
+    _headline_part JOINT "$HEADLINE_WORKSPACE_PREFIX" right
+  fi
+
   # Git status
   if (( ${#status_str} )); then
     _headline_part JOINT "$HEADLINE_STATUS_END" right
     _headline_part STATUS "$HEADLINE_STATUS_PREFIX$status_str" right
     _headline_part JOINT "$HEADLINE_BRANCH_TO_STATUS" right
     if (( $_HEADLINE_LEN_REMAIN < ${#HEADLINE_PAD_TO_BRANCH} + ${#HEADLINE_BRANCH_PREFIX} + ${#HEADLINE_TRUNC_PREFIX} )); then
-      user_str=''; host_str=''; path_str=''; branch_str=''
+      user_str=''; host_str=''; path_str=''; branch_str='';
     fi
   fi
 
   # Git branch
-  local len=$(( $_HEADLINE_LEN_REMAIN - ${#HEADLINE_BRANCH_PREFIX} ))
+  local len=$(( $_HEADLINE_LEN_REMAIN - ${#HEADLINE_BRANCH_PREFIX} - ${#HEADLINE_WORKSPACE_PREFIX} - ${#HEADLINE_WORKSPACE_PREFIX} - ${#HEADLINE_WORKSPACE_SUFIX} ))
   if (( ${#branch_str} )); then
     if (( $len < ${#HEADLINE_PATH_PREFIX} + ${#HEADLINE_TRUNC_PREFIX} + ${#HEADLINE_PATH_TO_BRANCH} + ${#branch_str} )); then
       path_str=''
