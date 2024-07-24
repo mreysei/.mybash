@@ -58,6 +58,7 @@ alias gr="npx git-reporter"  # Git reporter for current project (npx: ulisesanta
 
 # Node
 alias ni="npm install" # Npm install
+alias nci="npm install" # Npm clean install
 alias nid="npm install --save-dev" # Npm install in dev dependencies
 alias nri="npmReinstall" # Npm reinstall dependencies
 alias nr="npm run" # Npm run (Print all npm scripts)
