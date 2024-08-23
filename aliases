@@ -25,6 +25,9 @@ alias cde="cd /mnt/e" # Go to volume E
 alias cdw="cd /mnt/c/Users/maike" # Go to windows home
 alias cdmb="cd $MYBASH" # Go to mybash configuration
 
+# Network
+alias miip="curl ifconfig.me" # Show your public ip
+
 # My Aliases
 alias a="myAliases" # Find and select alias (short version)
 alias aliases="a" # Find and select alias
