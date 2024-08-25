@@ -5,6 +5,8 @@ refreshMyBash() {
   local ignoredFiles=("." ".." ".init" "install.sh" "README.md" ".gitignore" ".gitmodules")
   local folders=("/" "/scripts" "/plugins" "/zsh")
 
+  git pull
+
   for folder in $folders; do
     for file in $(ls -ap $MYBASH$folder | grep -v /); do
       if [[ ! $ignoredFiles[*] =~ $file ]]; then
