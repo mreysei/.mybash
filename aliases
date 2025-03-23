@@ -26,7 +26,9 @@ alias cdw="cd /mnt/c/Users/maike" # Go to windows home
 alias cdmb="cd $MYBASH" # Go to mybash configuration
 
 # Network
-alias miip="curl ifconfig.me" # Show your public ip
+alias ip="curl ifconfig.me" # Show your public ip
+alias ipbl="sudo fail2ban-client status sshd" # Show banned ip of fail2ban
+alias ipba="sudo fail2ban-client set sshd unbanip" # Add banned ip of fail2ban (ipba 192.168.1.0)
 
 # My Aliases
 alias a="myAliases" # Find and select alias (short version)
