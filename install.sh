@@ -2,61 +2,75 @@
 
 reset="\e[0m"
 green="\e[32m"
+red="\e[31m"
 blue="\e[36m"
-mbprefix="\e[36mMyBash ➡️ "
+mbprefix="\e[36mMyBash$reset ➡️ "
 
-echo "$mbprefix$reset Installing..."
+# Función para mostrar mensajes de error
+error() {
+  echo -e "$mbprefix $red$1$reset"
+  if [[ -n "$2" ]]; then
+    echo -e "$red$2$reset"
+  fi
+  exit 1
+}
 
-echo "$mbprefix$reset Checking if zsh is installed..."
-zshVersion=`zsh --version 2>&1 > /dev/null`
+# Función para mostrar mensajes de éxito
+success() {
+  echo -e "$mbprefix $green$1$reset"
+}
 
-if [[ "$zshVersion" == *"not found"* || "$zshVersion" == *"No se ha encontrado"* ]]; then
-  echo "$mbprefix$reset Installing zsh..."
-  sudo apt install zsh -y
-  echo "$mbprefix$green Zsh installed!"
-  echo "$mbprefix$reset Assign zsh by default shell..."
-  chsh -s $(which zsh)
+# Función para mostrar mensajes informativos
+info() {
+  echo -e "$mbprefix $1$reset"
+}
+
+info "Installing..."
+
+info "Checking if zsh is installed..."
+if ! command -v zsh &> /dev/null; then
+  info "Zsh not found, installing..."
+  sudo apt install zsh -y || error "Failed to install zsh."
+  success "Zsh installed!"
+  info "Assigning zsh as default shell..."
+  chsh -s $(which zsh) || error "Failed to assign zsh as default shell."
 else 
-  echo "$mbprefix$green Zsh is already installed!"
+  success "Zsh is already installed!"
 fi
 
-echo "$mbprefix$reset Checking if mybash config is added"
-if cat ~/.zshrc | grep -q "mybash"; then
-  echo "$mbprefix$green Mybash config is already added!"
-else 
-  echo "$mbprefix$reset Adding mybash config to ~/.zshrc"
+info "Checking if mybash config is added"
+if ! grep -q "mybash" ~/.zshrc; then
+  info "Adding mybash config to ~/.zshrc"
   echo '\n' >> ~/.zshrc
-  cat ~/.mybash/templates/.zshrc >> ~/.zshrc
-fi
-
-echo "$mbprefix$reset Adding or replacing gitconfig with mybash gitconfig"
-cp ~/.mybash/templates/.gitconfig ~/.gitconfig
-
-echo "$mbprefix$reset Refreshing console with a new configuration"
-.  ~/.mybash/.init
-refreshMyBash
-
-echo "$mbprefix$reset Activating nvm for node version management"
-. ~/.mybash/node/nvm/nvm.sh
-
-echo "$mbprefix$reset Checking if node is installed"
-nodeVersion=`nvm use --lts 2>&1 > /dev/null`
-
-if [[ "$nodeVersion" == *"is not yet installed"* ]]; then
-  echo "$mbprefix$reset Installing the latest version of Node..."
-  nvm install --lts
+  cat ~/.mybash/templates/.zshrc >> ~/.zshrc || error "Failed to add mybash config to ~/.zshrc."
 else 
-  echo "$mbprefix$green The latest version of Node is already installed!"
+  success "Mybash config is already added!"
 fi
 
-echo "$mbprefix$reset Checking if npm configuration is added"
-npmConfig=`npm config get init-author-username`
+info "Adding or replacing gitconfig with mybash gitconfig"
+cp ~/.mybash/templates/.gitconfig ~/.gitconfig || error "Failed to copy gitconfig."
 
-if [[ "$npmConfig" == *"undefined"* ]]; then
-  echo "$mbprefix$reset Adding npm configuration..."
-  cp ~/.mybash/templates/.npmrc ~/.npmrc
+info "Refreshing console with a new configuration"
+source ~/.mybash/.init &> /dev/null || error "Failed to refresh console."
+refreshMyBash &> /dev/null || error "Failed to refresh MyBash."
+
+info "Activating nvm for node version management"
+source ~/.mybash/node/nvm/nvm.sh &> /dev/null || error "Failed to activate nvm."
+
+info "Checking if node is installed"
+if ! nvm use --lts &> /dev/null; then
+  info "Node not installed, installing the latest version..."
+  nvm install --lts || error "Failed to install Node."
 else 
-  echo "$mbprefix$green Npm configuration is already added!"
+  success "The latest version of Node is already installed!"
 fi
 
-echo "$mbprefix$green Installed!"
+info "Checking if npm configuration is added"
+if [[ "$(npm config get init-author-username)" == "undefined" ]]; then
+  info "Adding npm configuration..."
+  cp ~/.mybash/templates/.npmrc ~/.npmrc || error "Failed to copy npm configuration."
+else 
+  success "Npm configuration is already added!"
+fi
+
+success "Installed!"
