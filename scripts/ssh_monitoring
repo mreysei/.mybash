@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Configuración
+BOT_TOKEN="7582837330:AAFRs38nNECZetpwxj7sPb7uVhog-dAvcZg"
+CHAT_ID="-1002193574586"
+SERVICE="ssh"
+
+# Función para enviar mensajes a Telegram
+send_telegram() {
+    local message="$1"
+    curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
+        -d "chat_id=$CHAT_ID" \
+        -d "text=$message" \
+        -d "parse_mode=HTML"
+}
+
+# Verificar el estado del servicio SSH
+check_service() {
+    if systemctl is-active --quiet $SERVICE; then
+        echo "🟢 El servicio $SERVICE está <b>activo</b>."
+    else
+        echo "🔴 El servicio $SERVICE está <b>inactivo</b>."
+    fi
+}
+
+# Monitorear cambios en el estado del servicio
+previous_status=$(systemctl is-active $SERVICE)
+while true; do
+    current_status=$(systemctl is-active $SERVICE)
+    if [[ $current_status != $previous_status ]]; then
+        message=$(check_service)
+        send_telegram "$message"
+        previous_status=$current_status
+    fi
+    sleep 60  # Verificar cada 60 segundos
+done

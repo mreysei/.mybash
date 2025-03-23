@@ -27,6 +27,7 @@ alias cdmb="cd $MYBASH" # Go to mybash configuration
 
 # Network
 alias ip="curl ifconfig.me" # Show your public ip
+alias ipa="sudo systemctl enable fail2ban" # Enable ip ban of fail2ban on startup
 alias ipbl="sudo fail2ban-client status sshd" # Show banned ip of fail2ban
 alias ipba="sudo fail2ban-client set sshd unbanip" # Add banned ip of fail2ban (ipba 192.168.1.0)
 
