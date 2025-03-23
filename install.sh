@@ -12,7 +12,6 @@ error() {
   if [[ -n "$2" ]]; then
     echo -e "$red$2$reset"
   fi
-  exit 1
 }
 
 # Función para mostrar mensajes de éxito
@@ -71,6 +70,25 @@ if [[ "$(npm config get init-author-username)" == "undefined" ]]; then
   cp ~/.mybash/templates/.npmrc ~/.npmrc || error "Failed to copy npm configuration."
 else 
   success "Npm configuration is already added!"
+fi
+
+# Instalación de python3-pip y requests
+info "Checking if python3-pip is installed..."
+if ! command -v pip3 &> /dev/null; then
+  info "python3-pip not found, installing..."
+  sudo apt install python3-pip -y || error "Failed to install python3-pip."
+  success "python3-pip installed!"
+else 
+  success "python3-pip is already installed!"
+fi
+
+info "Checking if requests is installed..."
+if ! pip3 show requests &> /dev/null; then
+  info "requests not found, installing..."
+  pip3 install requests || error "Failed to install requests."
+  success "requests installed!"
+else 
+  success "requests is already installed!"
 fi
 
 success "Installed!"
