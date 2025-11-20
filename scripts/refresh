@@ -2,7 +2,7 @@
 
 # Refresh my bash
 refreshMyBash() {
-  local ignoredFiles=("." ".." ".init" "install.sh" "README.md" ".gitignore" ".gitmodules")
+  local ignoredFiles=("." ".." ".init" "install.sh" "README.md" ".gitignore" ".gitmodules" "refresh")
   local folders=("/" "/scripts" "/plugins" "/zsh")
 
   git pull

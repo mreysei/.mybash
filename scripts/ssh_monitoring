@@ -24,13 +24,13 @@ check_service() {
 }
 
 # Monitorear cambios en el estado del servicio
-previous_status=$(systemctl is-active $SERVICE)
-while true; do
-    current_status=$(systemctl is-active $SERVICE)
-    if [[ $current_status != $previous_status ]]; then
-        message=$(check_service)
-        send_telegram "$message"
-        previous_status=$current_status
-    fi
-    sleep 60  # Verificar cada 60 segundos
-done
+# previous_status=$(systemctl is-active $SERVICE)
+# while true; do
+#     current_status=$(systemctl is-active $SERVICE)
+#     if [[ $current_status != $previous_status ]]; then
+#         message=$(check_service)
+#         send_telegram "$message"
+#         previous_status=$current_status
+#     fi
+#     sleep 60  # Verificar cada 60 segundos
+# done

@@ -50,7 +50,7 @@ info "Adding or replacing gitconfig with mybash gitconfig"
 cp ~/.mybash/templates/.gitconfig ~/.gitconfig || error "Failed to copy gitconfig."
 
 info "Refreshing console with a new configuration"
-source ~/.mybash/.init &> /dev/null || error "Failed to refresh console."
+# source ~/.mybash/.init &> /dev/null || error "Failed to refresh console."
 refreshMyBash &> /dev/null || error "Failed to refresh MyBash."
 
 info "Activating nvm for node version management"
