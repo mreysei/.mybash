@@ -49,7 +49,7 @@ alias gc="git commit" # Git commit
 alias gca="git commit --amend" # Git commit in amend mode
 alias gce="npx gitmoji-cli -c " # Git commit with emoji (npx: carloscuesta/gitmoji-cli)
 alias gl="git log --pretty=format:'%C(yellow)%h%C(reset)%C(magenta) 👤 %aN %C(dim)<%ae>%C(reset) %C(blue)(%ad)%C(reset):%n%s%n'" # Git log
-alias gls="git log --pretty=format:'%C(magenta)👤 %aN %C(blue)(%ar)%C(reset): %s'" # Git log with short date
+alias gls="git log --graph  --pretty=format:'%C(magenta)👤 %aN %C(blue)(%ar)%C(reset): %s'" # Git log with short date
 alias glf="git log" # Git log with full information
 alias gs="gitStatusWithWorkspaceInfo" # Git status
 alias gst="git stash" # Git stash
