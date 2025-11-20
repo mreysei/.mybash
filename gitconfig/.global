@@ -2,7 +2,7 @@
   autocrlf = input
 [user]
   name = Michael Reyes
-  email = mreysei@hotmail.com
+  email = maikelreyes96@gmail.com
 [paper]
   log = npx gitmoji-log | less --tabs=4 -rFX
 [color]
